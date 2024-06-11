@@ -7,7 +7,7 @@ namespace PhoneGuideReportService.Persistance
 {
     public static class ServiceRegistrations
     {
-        public static void AddPersistanceService(this IServiceCollection services)
+        public static void AddPersistanceServices(this IServiceCollection services)
         {
             services.AddDbContext<PhoneGuideReportDbContext>(opts => opts.UseNpgsql(ConnectionStrings.PostgreSQL));
         }
