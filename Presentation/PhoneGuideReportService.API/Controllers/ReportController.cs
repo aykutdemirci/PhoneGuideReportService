@@ -29,8 +29,8 @@ namespace PhoneGuideReportService.API.Controllers
             return new StatusCodeResult((int)HttpStatusCode.InternalServerError);
         }
 
-        [HttpGet("GetAllReportRequests")]
-        public async Task<IActionResult> GetAllReportRequests()
+        [HttpGet("GetReportRequests")]
+        public async Task<IActionResult> GetReportRequests()
         {
             var reports = await _reportService.GetAllAsync();
 
