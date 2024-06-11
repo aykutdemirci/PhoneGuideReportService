@@ -33,6 +33,7 @@ namespace PhoneGuideReportService.Persistance.Services
         {
             return await _unitOfWork.ReportRepository.GetAll().Select(q => new DtoDisplayReport
             {
+                Id = q.Id.ToString(),
                 RequestedDate = q.RequestedDate,
                 ReportStatus = q.ReportStatus,
             }).ToListAsync();
