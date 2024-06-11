@@ -14,9 +14,11 @@ namespace PhoneGuideReportService.Persistance
     {
         public static void AddPersistanceServices(this IServiceCollection services)
         {
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IReportRepository, ReportRepository>();
             services.AddDbContext<PhoneGuideReportDbContext>(opts => opts.UseNpgsql(ConnectionStrings.PostgreSQL));
+
+            services.AddScoped<IReportRepository, ReportRepository>();
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IReportService, ReportService>();
         }
