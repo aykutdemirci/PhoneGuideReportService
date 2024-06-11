@@ -18,8 +18,4 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\PhoneGuideReportService.Persistance\PhoneGuideReportService.Persistance.csproj" />
-  </ItemGroup>
-
 </Project>
