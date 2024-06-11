@@ -14,4 +14,8 @@
     <ProjectReference Include="..\PhoneGuideReportService.Core\PhoneGuideReportService.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Dto\Report\" />
+  </ItemGroup>
+
 </Project>
