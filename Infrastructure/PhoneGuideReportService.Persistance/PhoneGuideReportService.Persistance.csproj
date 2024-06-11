@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\PhoneGuideReportService.Application\PhoneGuideReportService.Application.csproj" />
     <ProjectReference Include="..\..\Core\PhoneGuideReportService.Core\PhoneGuideReportService.Domain.csproj" />
+    <ProjectReference Include="..\..\Core\PhoneGuideReportService.Domain\PhoneGuideReportService.Domain.csproj" />
   </ItemGroup>
 
 </Project>

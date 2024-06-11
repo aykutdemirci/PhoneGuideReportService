@@ -12,10 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PhoneGuideReportService.Core\PhoneGuideReportService.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Dto\Report\" />
+    <ProjectReference Include="..\PhoneGuideReportService.Domain\PhoneGuideReportService.Domain.csproj" />
   </ItemGroup>
 
 </Project>

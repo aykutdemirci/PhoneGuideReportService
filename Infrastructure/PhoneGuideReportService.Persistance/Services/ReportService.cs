@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PhoneGuide.Application.Dto.Report;
 using PhoneGuideReportService.Application.Abstractions.Services;
 using PhoneGuideReportService.Application.Abstractions.UnitOfWork;
-using PhoneGuideReportService.Application.Dto;
 using PhoneGuideReportService.Domain.Entities;
 using PhoneGuideReportService.Domain.Enums;
 
@@ -16,12 +16,12 @@ namespace PhoneGuideReportService.Persistance.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<bool> CreateAsync(DtoReport dtoCreateReport)
+        public async Task<bool> CreateAsync(DtoCreateReport dtoCreateReport)
         {
             var added = await _unitOfWork.ReportRepository.AddAsync(new Report
             {
-                RequestedDate = DateTime.UtcNow,
-                ReportStatus = ReportStatus.Preparing,
+                RequestedDate = dtoCreateReport.RequestedDate,
+                ReportStatus = dtoCreateReport.ReportStatus,
             });
 
             if (added) await _unitOfWork.SaveAsync();
@@ -29,9 +29,9 @@ namespace PhoneGuideReportService.Persistance.Services
             return added;
         }
 
-        public async Task<List<DtoReport>> GetAllAsync()
+        public async Task<List<DtoDisplayReport>> GetAllAsync()
         {
-            return await _unitOfWork.ReportRepository.GetAll().Select(q => new DtoReport
+            return await _unitOfWork.ReportRepository.GetAll().Select(q => new DtoDisplayReport
             {
                 RequestedDate = q.RequestedDate,
                 ReportStatus = q.ReportStatus,

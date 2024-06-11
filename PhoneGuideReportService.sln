@@ -7,6 +7,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneGuideReportService.API", "Presentation\PhoneGuideReportService.API\PhoneGuideReportService.API.csproj", "{D6AD08A5-CFCF-4119-9A67-70A0BF7782D3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{274C4A9A-BFD3-477F-98DA-2528D00175E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{730B91D9-AF89-46E5-BEBF-25907ECFBF1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneGuideReportService.Application", "Core\PhoneGuideReportService.Application\PhoneGuideReportService.Application.csproj", "{BADCED3E-5307-4C60-BC08-0FB0A0F3E049}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneGuideReportService.Domain", "Core\PhoneGuideReportService.Domain\PhoneGuideReportService.Domain.csproj", "{5FB03808-B4E1-4F5F-A19F-6C0A21E95DF6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneGuideReportService.Persistance", "Infrastructure\PhoneGuideReportService.Persistance\PhoneGuideReportService.Persistance.csproj", "{8E3CEBC4-324F-4CBF-9EE9-F5E64C8B9940}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +27,27 @@ Global
 		{D6AD08A5-CFCF-4119-9A67-70A0BF7782D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6AD08A5-CFCF-4119-9A67-70A0BF7782D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6AD08A5-CFCF-4119-9A67-70A0BF7782D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BADCED3E-5307-4C60-BC08-0FB0A0F3E049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BADCED3E-5307-4C60-BC08-0FB0A0F3E049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BADCED3E-5307-4C60-BC08-0FB0A0F3E049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BADCED3E-5307-4C60-BC08-0FB0A0F3E049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FB03808-B4E1-4F5F-A19F-6C0A21E95DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FB03808-B4E1-4F5F-A19F-6C0A21E95DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FB03808-B4E1-4F5F-A19F-6C0A21E95DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FB03808-B4E1-4F5F-A19F-6C0A21E95DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E3CEBC4-324F-4CBF-9EE9-F5E64C8B9940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3CEBC4-324F-4CBF-9EE9-F5E64C8B9940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3CEBC4-324F-4CBF-9EE9-F5E64C8B9940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3CEBC4-324F-4CBF-9EE9-F5E64C8B9940}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D6AD08A5-CFCF-4119-9A67-70A0BF7782D3} = {7E3C94B3-CB97-4D2C-9747-9988ADA1A44C}
+		{BADCED3E-5307-4C60-BC08-0FB0A0F3E049} = {274C4A9A-BFD3-477F-98DA-2528D00175E3}
+		{5FB03808-B4E1-4F5F-A19F-6C0A21E95DF6} = {274C4A9A-BFD3-477F-98DA-2528D00175E3}
+		{8E3CEBC4-324F-4CBF-9EE9-F5E64C8B9940} = {730B91D9-AF89-46E5-BEBF-25907ECFBF1B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B002D7E-8419-4C32-B9BD-A6556898E9C0}

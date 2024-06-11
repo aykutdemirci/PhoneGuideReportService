@@ -1,11 +1,11 @@
-﻿using PhoneGuideReportService.Application.Dto;
+﻿using PhoneGuide.Application.Dto.Report;
 
 namespace PhoneGuideReportService.Application.Abstractions.Services
 {
     public interface IReportService
     {
-        Task<bool> CreateAsync(DtoReport dtoCreateReport);
+        Task<bool> CreateAsync(DtoCreateReport dtoCreateReport);
 
-        Task<List<DtoReport>> GetAllAsync();
+        Task<List<DtoDisplayReport>> GetAllAsync();
     }
 }
