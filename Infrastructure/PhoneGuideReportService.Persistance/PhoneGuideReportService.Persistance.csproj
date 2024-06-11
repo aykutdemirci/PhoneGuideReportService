@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\PhoneGuideReportService.Application\PhoneGuideReportService.Application.csproj" />
     <ProjectReference Include="..\..\Core\PhoneGuideReportService.Core\PhoneGuideReportService.Domain.csproj" />
   </ItemGroup>
 
