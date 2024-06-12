@@ -14,20 +14,7 @@ namespace PhoneGuideReportService.Infrastructure
             {
                 services.AddSingleton<IAsyncConnectionFactory>(provider =>
                 {
-                    var settings = RabbitMqConfigs.GetConfigs;
-
-                    var factory = new ConnectionFactory
-                    {
-                        //UserName = settings.UserName,
-                        //Password = settings.Password,
-                        HostName = settings.HostName,
-                        //Port = settings.Port,
-
-                        //DispatchConsumersAsync = true,
-                        //AutomaticRecoveryEnabled = true,
-                    };
-
-                    return factory;
+                    return new ConnectionFactory { HostName = RabbitMqConfigs.GetConfigs.HostName };
                 });
             }
 
