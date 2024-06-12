@@ -16,3 +16,15 @@ Ben rabbitmq_server-3.13.3 ve erlang 14.2.5 ile çalıştım.
 rabbitMQ download: https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.13.3/rabbitmq-server-3.13.3.exe
 <br>
 erlang download: https://www.erlang.org/patches/otp-26.2.5
+<br>
+<br>
+RabbitMQ ve erlang kurulduktan sonra system environment variables ayarları yapılmalıdır
+<br>
+<br>
+Sistem değişkenlerine "ERLANG_HOME" keyi eklenerek değeri "C:\Program Files\Erlang OTP" olacak şekilde (bilgisayarda hangi dizine kuruldu ise) ayarlanmalıdır
+<br>
+<br>
+Yine sistem değişkenlerine "RABBITMQ_SERVER" keyi eklenerek değeri "C:\Program Files\rabbitmq_server-3.13.3" olacak şekilde (bilgisayarda hangi dizine kuruldu ise) ayarlanmalıdır
+<br>
+<br>
+Sistem değişkenlerinden "PATH" değişkenine ise "C:\Program Files\rabbitmq_server-3.13.3" ve "C:\Program Files\Erlang OTP\bin" (bilgisayarda hangi dizinlere kuruldu ise) değerleri eklenmelidir
