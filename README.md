@@ -11,7 +11,7 @@ visual studio'da bu şekilde gelmezse yukarıdaki sıralamada birden fazla start
 
 Uygulamanın çalışacağı sunucuda rabbitMQ ve erlang kurulu olmalıdır. 
 <br>
-Ben rabbitmq_server-3.13.3 ve erlang 14.2.5 ile çalıştım.
+Ben rabbitmq_server-3.13.3 ve erlang 26.2.5 ile çalıştım.
 <br>
 rabbitMQ download: https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.13.3/rabbitmq-server-3.13.3.exe
 <br>
