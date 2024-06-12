@@ -6,12 +6,6 @@ namespace PhoneGuideReportService.Infrastructure.Configurations
     {
         public string HostName { get; private set; }
 
-        public string UserName { get; private set; }
-
-        public string Password { get; private set; }
-
-        public int Port { get; set; }
-
         public static RabbitMqConfigs GetConfigs
         {
             get
@@ -22,10 +16,7 @@ namespace PhoneGuideReportService.Infrastructure.Configurations
 
                 return new RabbitMqConfigs
                 {
-                    HostName = cfgManager.GetSection("MessageQueue:RabbitMq:HostName").Value,
-                    UserName = cfgManager.GetSection("MessageQueue:RabbitMq:UserName").Value,
-                    Password = cfgManager.GetSection("MessageQueue:RabbitMq:Password").Value,
-                    Port = int.Parse(cfgManager.GetSection("MessageQueue:RabbitMq:Port").Value)
+                    HostName = cfgManager.GetSection("MessageQueue:RabbitMq:HostName").Value
                 };
             }
         }

@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneGuideReportService.Per
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneGuideReportService.Infrastructure", "Infrastructure\PhoneGuideReportService.Infrastructure\PhoneGuideReportService.Infrastructure.csproj", "{DD1976AE-FEE5-41E4-999A-3DB8BC501484}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "QueueConsumer", "QueueConsumer", "{C2B421F1-EF13-426D-94DF-7D72EB6562A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueConsumer", "QueueConsumer\QueueConsumer\QueueConsumer.csproj", "{8CA6AB60-AA3D-43DE-B822-5104E5D6821B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,10 @@ Global
 		{DD1976AE-FEE5-41E4-999A-3DB8BC501484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD1976AE-FEE5-41E4-999A-3DB8BC501484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD1976AE-FEE5-41E4-999A-3DB8BC501484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA6AB60-AA3D-43DE-B822-5104E5D6821B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA6AB60-AA3D-43DE-B822-5104E5D6821B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA6AB60-AA3D-43DE-B822-5104E5D6821B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA6AB60-AA3D-43DE-B822-5104E5D6821B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +63,7 @@ Global
 		{5FB03808-B4E1-4F5F-A19F-6C0A21E95DF6} = {274C4A9A-BFD3-477F-98DA-2528D00175E3}
 		{8E3CEBC4-324F-4CBF-9EE9-F5E64C8B9940} = {730B91D9-AF89-46E5-BEBF-25907ECFBF1B}
 		{DD1976AE-FEE5-41E4-999A-3DB8BC501484} = {730B91D9-AF89-46E5-BEBF-25907ECFBF1B}
+		{8CA6AB60-AA3D-43DE-B822-5104E5D6821B} = {C2B421F1-EF13-426D-94DF-7D72EB6562A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B002D7E-8419-4C32-B9BD-A6556898E9C0}
