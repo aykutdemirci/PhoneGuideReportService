@@ -18,12 +18,13 @@ namespace PhoneGuideReportService.Infrastructure
 
                     var factory = new ConnectionFactory
                     {
-                        UserName = settings.UserName,
-                        Password = settings.Password,
+                        //UserName = settings.UserName,
+                        //Password = settings.Password,
                         HostName = settings.HostName,
+                        //Port = settings.Port,
 
-                        DispatchConsumersAsync = true,
-                        AutomaticRecoveryEnabled = true,
+                        //DispatchConsumersAsync = true,
+                        //AutomaticRecoveryEnabled = true,
                     };
 
                     return factory;
