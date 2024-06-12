@@ -1,6 +1,6 @@
 ﻿using PhoneGuideReportService.Domain.Enums;
 
-namespace PhoneGuide.Application.Dto.Report
+namespace PhoneGuideReportService.Application.Dto.Report
 {
     public class DtoCreateReport
     {

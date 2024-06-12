@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PhoneGuide.Application.Dto.Report;
+using PhoneGuideReportService.Application.Dto.Report;
 using PhoneGuideReportService.Application.Abstractions.Services;
 using PhoneGuideReportService.Domain.Enums;
 using System.Net;
+using PhoneGuideReportService.Application.Abstractions.Services.MessageQueue;
 
 namespace PhoneGuideReportService.API.Controllers
 {
@@ -11,10 +12,13 @@ namespace PhoneGuideReportService.API.Controllers
     public class ReportController : ControllerBase
     {
         private readonly IReportService _reportService;
+        private readonly IMessageQueueService _messageQueueProducer;
 
-        public ReportController(IReportService reportService)
+        public ReportController(IReportService reportService,
+                                IMessageQueueService messageQueueProducer)
         {
             _reportService = reportService;
+            _messageQueueProducer = messageQueueProducer;
         }
 
         [HttpPost("CreateReportRequest")]
@@ -22,9 +26,16 @@ namespace PhoneGuideReportService.API.Controllers
         {
             var dtoReport = new DtoCreateReport { ReportStatus = ReportStatus.Preparing, RequestedDate = DateTime.UtcNow };
 
-            var result = await _reportService.CreateAsync(dtoReport);
+            var reportId = await _reportService.CreateAsync(dtoReport);
 
-            if (result) return new StatusCodeResult((int)HttpStatusCode.Created);
+            if (reportId != Guid.Empty)
+            {
+                var report = await _reportService.GetByIdAsync(reportId);
+
+                _messageQueueProducer.SendMessage(report, "report_queue");
+
+                return new StatusCodeResult((int)HttpStatusCode.Created);
+            }
 
             return new StatusCodeResult((int)HttpStatusCode.InternalServerError);
         }

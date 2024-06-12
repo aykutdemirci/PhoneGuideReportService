@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PhoneGuide.Application.Dto.Report;
 using PhoneGuideReportService.Application.Abstractions.Services;
 using PhoneGuideReportService.Application.Abstractions.UnitOfWork;
+using PhoneGuideReportService.Application.Dto.Report;
 using PhoneGuideReportService.Domain.Entities;
-using PhoneGuideReportService.Domain.Enums;
 
 namespace PhoneGuideReportService.Persistance.Services
 {
@@ -16,17 +15,19 @@ namespace PhoneGuideReportService.Persistance.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<bool> CreateAsync(DtoCreateReport dtoCreateReport)
+        public async Task<Guid> CreateAsync(DtoCreateReport dtoCreateReport)
         {
-            var added = await _unitOfWork.ReportRepository.AddAsync(new Report
+            var report = new Report
             {
                 RequestedDate = dtoCreateReport.RequestedDate,
                 ReportStatus = dtoCreateReport.ReportStatus,
-            });
+            };
+
+            var added = await _unitOfWork.ReportRepository.AddAsync(report);
 
             if (added) await _unitOfWork.SaveAsync();
 
-            return added;
+            return report.Id;
         }
 
         public async Task<List<DtoDisplayReport>> GetAllAsync()
@@ -37,6 +38,17 @@ namespace PhoneGuideReportService.Persistance.Services
                 RequestedDate = q.RequestedDate,
                 ReportStatus = q.ReportStatus,
             }).ToListAsync();
+        }
+
+        public async Task<DtoDisplayReport> GetByIdAsync(Guid id)
+        {
+            var report = await _unitOfWork.ReportRepository.GetByIdAsync(id.ToString(), false);
+            return new DtoDisplayReport
+            {
+                Id = report.Id.ToString(),
+                ReportStatus = report.ReportStatus,
+                RequestedDate = report.RequestedDate,
+            };
         }
     }
 }
